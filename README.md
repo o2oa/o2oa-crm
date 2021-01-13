@@ -16,4 +16,14 @@ crm 自定义应用。
 - 全天候客户支持团队，帮助从小型企业到大型企业的所有用户
    
 ## 屏幕截图
-- ![image](./imge/crm1.png)
+- ![image](./image/crm1.png)
+
+- ![image](./image/crm2.png)
+
+- ![image](./image/crm3.png)
+
+- ![image](./image/crm4.png)
+
+- ![image](./image/crm5.png)
+
+- ![image](./image/crm6.png)
