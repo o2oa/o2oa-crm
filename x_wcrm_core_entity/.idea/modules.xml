@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../x_wcrm_assemble_control/x_wcrm_assemble_control.iml" filepath="$PROJECT_DIR$/../x_wcrm_assemble_control/x_wcrm_assemble_control.iml" />
+      <module fileurl="file://$PROJECT_DIR$/x_wcrm_core_entity.iml" filepath="$PROJECT_DIR$/x_wcrm_core_entity.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="x_wcrm_assemble_control:war">
+    <output-path>$PROJECT_DIR$/../x_wcrm_assemble_control/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>x_wcrm_assemble_control</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="x_wcrm_assemble_control.war">
+      <element id="artifact" artifact-name="x_wcrm_assemble_control:war exploded" />
+    </root>
+  </artifact>
+</component>

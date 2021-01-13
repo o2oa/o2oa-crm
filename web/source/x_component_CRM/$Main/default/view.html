@@ -1,0 +1,37 @@
+<div class="o2_crm_content" data-o2-element="node">
+    <div class="o2_crm_layout_top" data-o2-element="topLayout">
+        <div class="o2_crm_head_content" data-o2-element="headContentNode">
+            <div class="o2_crm_head_logo">
+                <div class="o2_crm_head_logo_img"></div>
+                <div class="o2_crm_head_logo_title">{{$.lp.main.title}}</div>
+            </div>
+            <div class="o2_crm_head_login">
+                <div class="o2_crm_head_login_username">{{$.user.name}}</div>
+                <div class="o2_crm_head_login_usericon" style="background-image: url({{$.user.iconUrl}});"></div>
+
+            </div>
+        </div>
+    </div>
+    <div class="o2_crm_layout_bottom" data-o2-element="bottomLayout">
+        <div class="o2_crm_layout_bottomLeft">
+            <div class="o2_crm_menu_content" data-o2-element="blLayout">
+                {{each ($.lp.main.menu)}}
+                {{if ($.type)=="li"}}
+                     <div class="o2_crm_menu_{{$.name}} {{$.type}} naviItemLi {{$.class}}" action="{{$.name}}" data-o2-element="subMenu" data-o2-events="click:clickMenu">
+                {{end if}}
+                {{if ($.type)!="li"}}
+                     <div class="o2_crm_menu_{{$.name}} {{$.type}}">
+                {{end if}}
+                    <div class="img" ></div>
+                    <div class="text" >{{$.text}}</div>
+                </div>
+                {{end each}}
+            </div>
+        </div>
+
+        <div class="o2_crm_layout_bottomRight">
+            <div class="o2_crm_body_content" data-o2-element="brLayout">
+            </div>
+        </div>
+    </div>
+</div>
