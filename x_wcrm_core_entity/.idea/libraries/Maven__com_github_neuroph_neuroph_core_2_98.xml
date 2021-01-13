@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.github.neuroph:neuroph-core:2.98">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/github/neuroph/neuroph-core/2.98/neuroph-core-2.98.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/github/neuroph/neuroph-core/2.98/neuroph-core-2.98-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/github/neuroph/neuroph-core/2.98/neuroph-core-2.98-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

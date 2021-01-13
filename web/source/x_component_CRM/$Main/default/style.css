@@ -1,0 +1,174 @@
+.o2_crm_head_content{
+    font-size: 16px;
+    width: 100%;
+    min-width: 1000px;
+    height: 60px;
+    border-top: 1px solid;
+    box-shadow: rgb(210, 211, 215) 0px 1px 2px;
+}
+.o2_crm_head_logo{
+    width: 300px;
+    padding-top: 15px;
+    padding-left: 40px;
+    display: inline-block;
+}
+.o2_crm_head_logo_img{
+    float: left;
+    width: 32px;
+    height: 32px;
+    background: url("/x_component_CRM/$Main/default/icons/crm.png") 0 center no-repeat;
+}
+.o2_crm_head_logo_title{
+    margin-left: 5px;
+    float: left;
+    height: 32px;
+    line-height: 32px;
+}
+.o2_crm_head_login{
+    padding-top: 15px;
+    padding-right: 30px;
+    float: right;
+    height: 45px;
+    display: inline-block;
+}
+.o2_crm_head_login_username{
+    float: left;
+    line-height: 30px;
+    margin: 0 10px;
+}
+.o2_crm_head_login_usericon{
+    width: 30px;
+    height: 30px;
+    float: left;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 20px;
+}
+/*bottom--left*/
+.o2_crm_layout_bottomLeft{
+    width: 200px;
+    height: 876px;
+    background: rgb(80, 83, 83);
+    float: left;
+}
+
+.o2_crm_menu_content>.bt{
+    color: rgb(255, 255, 255);
+    background: rgb(64, 122, 193);
+    width: 160px;
+    height: 40px;
+    line-height: 40px;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.o2_crm_menu_content .text{
+    float: left;
+    margin-left: 10px;
+}
+.o2_crm_menu_start>.img{
+    float: left;
+    margin-left: 30px;
+    margin-top: 10px;
+    width: 20px;
+    height: 20px;
+    background: url(/x_component_CRM/$Main/default/icons/add.png);
+}
+.o2_crm_menu_content>.ul{
+    height: 46px;
+    line-height: 46px;
+    font-size: 16px;
+    color: #FFFFFF;
+}
+.o2_crm_menu_content>.ul>.img{
+    float: left;
+    margin-left: 20px;
+    margin-top: 15px;
+    width: 16px;
+    height: 16px;
+}
+.o2_crm_menu_myWork>.img{
+    background: url(/x_component_CRM/$Main/default/icons/myWork.png);
+}
+.o2_crm_menu_analysis>.img{
+    background: url(/x_component_CRM/$Main/default/icons/home.png);
+}
+
+
+.o2_crm_menu_content>.li{
+    height: 46px;
+    line-height: 46px;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+}
+.o2_crm_menu_content>.li>.img{
+    float: left;
+    margin-left: 40px;
+    margin-top: 15px;
+    width: 16px;
+    height: 16px;
+}
+.o2_crm_menu_content>.li:hover,.o2_crm_menu_content>.li.active{
+   color:rgb(255, 142, 49);
+}
+
+.o2_crm_menu_home>.img{
+    background: url(/x_component_CRM/$Main/default/icons/home.png);
+}
+.o2_crm_menu_infor>.img{
+    background: url(/x_component_CRM/$Main/default/icons/infor.png);
+}
+.o2_crm_menu_clue>.img{
+    background: url(/x_component_CRM/$Main/default/icons/clue.png);
+}
+.o2_crm_menu_customer>.img{
+    background: url(/x_component_CRM/$Main/default/icons/customer.png);
+}
+.o2_crm_menu_publicSource>.img{
+    background: url(/x_component_CRM/$Main/default/icons/publicSource.png);
+}
+.o2_crm_menu_contact>.img{
+    background: url(/x_component_CRM/$Main/default/icons/contact.png);
+}
+.o2_crm_menu_business>.img{
+    background: url(/x_component_CRM/$Main/default/icons/business.png);
+}
+.o2_crm_menu_report>.img{
+    background: url(/x_component_CRM/$Main/default/icons/home.png);
+}
+/*change color*/
+.o2_crm_menu_home:hover>.img,.o2_crm_menu_home.active>.img{
+    background: url(/x_component_CRM/$Main/default/icons/home-fill.png);
+}
+.o2_crm_menu_infor:hover>.img,.o2_crm_menu_infor.active>.img{
+    background: url(/x_component_CRM/$Main/default/icons/infor-fill.png);
+}
+.o2_crm_menu_clue:hover>.img,.o2_crm_menu_clue.active>.img{
+    background: url(/x_component_CRM/$Main/default/icons/clue-fill.png);
+}
+.o2_crm_menu_customer:hover>.img,.o2_crm_menu_customer.active>.img{
+    background: url(/x_component_CRM/$Main/default/icons/customer-fill.png);
+}
+.o2_crm_menu_publicSource:hover>.img,.o2_crm_menu_publicSource.active>.img{
+    background: url(/x_component_CRM/$Main/default/icons/publicSource-fill.png);
+}
+.o2_crm_menu_contact:hover>.img,.o2_crm_menu_contact.active>.img{
+    background: url(/x_component_CRM/$Main/default/icons/contact-fill.png);
+}
+.o2_crm_menu_business:hover>.img,.o2_crm_menu_business.active>.img{
+    background: url(/x_component_CRM/$Main/default/icons/business-fill.png);
+}
+.o2_crm_menu_report:hover>.img,.o2_crm_menu_report.active>.img{
+    background: url(/x_component_CRM/$Main/default/icons/home-fill.png);
+}
+/*-----botomRight*/
+.o2_crm_layout_bottomRight{
+    padding-top: 2px;
+    height: 660px;
+    background-color: rgb(245, 246, 249);
+    min-width: 800px;
+    margin-left: 200px;
+}
