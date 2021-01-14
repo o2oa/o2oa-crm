@@ -2,16 +2,11 @@ package com.x.wcrm.core.entity;
 
 import java.util.Date;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
-import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
-import javax.persistence.UniqueConstraint;
+import javax.persistence.*;
 
+import com.x.base.core.project.tools.StringTools;
+import org.apache.commons.lang3.StringUtils;
+import org.apache.openjpa.persistence.Persistent;
 import org.apache.openjpa.persistence.jdbc.Index;
 
 import com.x.base.core.entity.JpaObject;
@@ -19,6 +14,7 @@ import com.x.base.core.entity.SliceJpaObject;
 import com.x.base.core.entity.annotation.CheckPersist;
 import com.x.base.core.entity.annotation.ContainerEntity;
 import com.x.base.core.project.annotation.FieldDescribe;
+import org.apache.openjpa.persistence.jdbc.Strategy;
 
 @Entity
 @ContainerEntity
@@ -58,6 +54,9 @@ public class Record extends SliceJpaObject {
 			}
 		}
 		this.longupdatetime = _Date2Long(date);
+		if (StringTools.utf8Length(this.getProperties().getContent()) > length_255B) {
+			this.content = StringTools.utf8SubString(this.getProperties().getContent(), length_255B - 3) + "...";
+		}
 	}
 
 	public static final String types_FIELDNAME = "types";
@@ -131,6 +130,14 @@ public class Record extends SliceJpaObject {
 	@CheckPersist(allowEmpty = false)
 	private Long longupdatetime;
 
+	public static final String properties_FIELDNAME = "properties";
+	@FieldDescribe("属性对象存储字段.")
+	@Persistent(fetch = FetchType.EAGER)
+	@Strategy(JsonPropertiesValueHandler)
+	@Column(length = JpaObject.length_10M, name = ColumnNamePrefix + properties_FIELDNAME)
+	@CheckPersist(allowEmpty = true)
+	private RecordProperties properties;
+
 	public String getTypes() {
 		return types;
 	}
@@ -148,11 +155,20 @@ public class Record extends SliceJpaObject {
 	}
 
 	public String getContent() {
-		return content;
+		if (StringUtils.isNotEmpty(this.getProperties().getContent())) {
+			return this.properties.getContent();
+		} else {
+			return this.content;
+		}
 	}
 
 	public void setContent(String content) {
 		this.content = content;
+		this.getProperties().setContent(content);
+	}
+
+	public Record() {
+		this.properties = new RecordProperties();
 	}
 
 	public String getCategory() {
@@ -211,4 +227,14 @@ public class Record extends SliceJpaObject {
 		this.longupdatetime = longupdatetime;
 	}
 
+	public RecordProperties getProperties() {
+		if (null == this.properties) {
+			this.properties = new RecordProperties();
+		}
+		return this.properties;
+	}
+
+	public void setProperties(RecordProperties properties) {
+		this.properties = properties;
+	}
 }
