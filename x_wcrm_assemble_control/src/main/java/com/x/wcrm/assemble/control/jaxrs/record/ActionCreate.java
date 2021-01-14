@@ -15,6 +15,7 @@ import com.x.base.core.project.logger.LoggerFactory;
 import com.x.wcrm.assemble.control.Business;
 import com.x.wcrm.assemble.control.service.RecordService;
 import com.x.wcrm.core.entity.Record;
+import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
 
 public class ActionCreate extends BaseAction {
 
@@ -30,6 +31,7 @@ public class ActionCreate extends BaseAction {
 
 			o = recordService.initDefaultValue(effectivePerson, o);
 			emc.beginTransaction(Record.class);
+			o.setContent(wi.getContent());
 			emc.persist(o, CheckPersistType.all);
 			emc.commit();
 			
