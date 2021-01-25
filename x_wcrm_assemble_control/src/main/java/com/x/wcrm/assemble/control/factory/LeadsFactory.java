@@ -215,4 +215,64 @@ public class LeadsFactory extends AbstractFactory {
 		return em.createQuery(cq).getSingleResult();
 	}
 
+	//根据责任人列表获得线索列表 (未转化)
+	public List<Leads> ListByOwnerList_NoTransform(List<String> _distinguishNameList, Integer adjustPage,
+												   Integer adjustPageSize, String keyString, String orderFieldName, String orderType) throws Exception {
+		EntityManager em = this.entityManagerContainer().get(Leads.class);
+		CriteriaBuilder cb = em.getCriteriaBuilder();
+		CriteriaQuery<Leads> cq = cb.createQuery(Leads.class);
+		Root<Leads> root = cq.from(Leads.class);
+
+		Predicate p = root.get(Leads_.owneruser).in(_distinguishNameList);
+		p = cb.and(p, cb.equal(root.get(Leads_.istransform), BaseAction.NOT_TRANSFORM));
+		//搜索关键字判断
+		if (!StringWCRMUtils.isEmptyKeyString(keyString)) {
+			String key = StringUtils.trim(StringUtils.replaceEach(keyString, new String[] { "\u3000", "?", "%" },
+					new String[] { " ", "", "" }));
+			Predicate p_like = cb.or(cb.like(root.get(Leads_.name), "%" + key + "%"),
+					cb.like(root.get(Leads_.cellphone), "%" + key + "%"),
+					cb.like(root.get(Leads_.pinyin), "%" + key + "%"),
+					cb.like(root.get(Leads_.pinyinInitial), "%" + key + "%"),
+					cb.like(root.get(Leads_.telephone), "%" + key + "%"));
+			p = cb.and(p, p_like);
+		}
+		//排序值字段，升降序判断
+		Order _order;
+		if (StringUtils.isEmpty(orderType) || StringUtils.isEmpty(orderFieldName) || null == orderType
+				|| null == orderFieldName) {
+			_order = cb.desc(root.get(defaultOrder));
+
+		} else {
+			_order = CriteriaQueryTools.setOrder(cb, root, Leads_.class, orderFieldName, orderType);
+		}
+		cq.select(root).where(p).orderBy(_order);
+		//		System.out.println("LeadsFactory.ListByOwnerList():" + cq.toString());
+		return em.createQuery(cq).setFirstResult((adjustPage - 1) * adjustPageSize).setMaxResults(adjustPageSize)
+				.getResultList();
+	}
+
+	//根据责任人列表获得线索数量(未转化)
+	public Long ListByOwnerList_NoTransform_Count(List<String> _distinguishNameList, String keyString)
+			throws Exception {
+		EntityManager em = this.entityManagerContainer().get(Leads.class);
+		CriteriaBuilder cb = em.getCriteriaBuilder();
+		CriteriaQuery<Long> cq = cb.createQuery(Long.class);
+		Root<Leads> root = cq.from(Leads.class);
+
+		Predicate p = root.get(Leads_.owneruser).in(_distinguishNameList);
+		p = cb.and(p, cb.equal(root.get(Leads_.istransform), BaseAction.NOT_TRANSFORM));
+		//搜索关键字判断
+		if (!StringWCRMUtils.isEmptyKeyString(keyString)) {
+			String key = StringUtils.trim(StringUtils.replaceEach(keyString, new String[] { "\u3000", "?", "%" },
+					new String[] { " ", "", "" }));
+			Predicate p_like = cb.or(cb.like(root.get(Leads_.name), "%" + key + "%"),
+					cb.like(root.get(Leads_.cellphone), "%" + key + "%"),
+					cb.like(root.get(Leads_.pinyin), "%" + key + "%"),
+					cb.like(root.get(Leads_.pinyinInitial), "%" + key + "%"),
+					cb.like(root.get(Leads_.telephone), "%" + key + "%"));
+			p = cb.and(p, p_like);
+		}
+		cq.select(cb.count(root)).where(p);
+		return em.createQuery(cq).getSingleResult();
+	}
 }
