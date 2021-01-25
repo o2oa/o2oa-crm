@@ -520,7 +520,7 @@ MWF.xApplication.CRM.LP = {
 			"field1":{
 				"field":"name",
 				"title":"线索名称",
-				"width":165,
+				"width":200,
 				"fixed":"left",
 				"resize": true,
 				"align": 'left',
@@ -530,13 +530,13 @@ MWF.xApplication.CRM.LP = {
 			"field2":{
 				"field":"source",
 				"title":"来源",
-				"width":165,
+				"width":130,
 				"align": 'left'
 			},
 			"field3":{
 				"field":"telephone",
 				"title":"电话",
-				"minWidth":165,
+				"minWidth":130,
 				"resize":true,
 				"align": 'left',
 				"sort":true
@@ -552,29 +552,38 @@ MWF.xApplication.CRM.LP = {
 			"field5":{
 				"field":"owneruser",
 				"title":"负责人",
-				"minWidth":120,
+				"minWidth":160,
 				"resize":true,
 				"align": 'left',
 				"sort":true
 			},
+			"field55":{
+				"field":"istransform",
+				"title":"是否已转化",
+				"width":160,
+				"resize": true,
+				"align": 'left',
+				"sort":true,
+				"formatter" :function (v, data, index) {if(v=="1"){return "已转化"}else{return "未转化"};}
+			},
 			"field6":{
 				"field":"cellphone",
 				"title":"手机",
-				"width":165,
+				"width":200,
 				"resize":true,
 				"align": 'left'
 			},
 			"field7":{
 				"field":"industry",
 				"title":"客户类型",
-				"width":120,
+				"width":200,
 				"align": 'left',
 				"resize":true
 			},
 			"field8":{
 				"field":"level",
 				"title":"客户级别",
-				"width":120,
+				"width":200,
 				"resize":true,
 				"align": 'left'
 			},
@@ -582,12 +591,12 @@ MWF.xApplication.CRM.LP = {
 				"field":"address",
 				"title":"地址",
 				"align": 'left',
-				"width":165
+				"width":200
 			},
 			"field10":{
 				"field":"nexttime",
 				"title":"下次联系时间",
-				"width":160,
+				"width":200,
 				"align": 'left',
 				"sort":true
 			},
@@ -595,7 +604,7 @@ MWF.xApplication.CRM.LP = {
 				"field":"remark",
 				"title":"备注",
 				"align": 'left',
-				"width":165
+				"width":200
 			}
 			/*"field10":{
 				"field":"opts",
@@ -625,6 +634,7 @@ MWF.xApplication.CRM.LP = {
 				"items":[
 					{"title":"我负责的线索"},
 					{"title":"下属的线索"},
+					{"title":"未转化的线索"},
 					{"title":"已转化的线索"},
 					{"title":"全部线索"}
 				],

@@ -210,6 +210,9 @@ MWF.xApplication.CRM.Actions.RestActions = new Class({
 	ListTransfer: function(page, size,  filterData, success,failure, async){
 		this.action.invoke({"name": "ListTransfer","parameter": {"page": page , "size" : size }, "data": filterData, "async": async, "success": success,	"failure": failure});
 	},
+	ListNoTransfer: function(page, size,  filterData, success,failure, async){
+		this.action.invoke({"name": "ListNoTransfer","parameter": {"page": page , "size" : size }, "data": filterData, "async": async, "success": success,	"failure": failure});
+	},
 	ListAllMy: function(page, size,  filterData, success,failure, async){
 		this.action.invoke({"name": "ListAllMy","parameter": {"page": page , "size" : size }, "data": filterData, "async": async, "success": success,	"failure": failure});
 	},

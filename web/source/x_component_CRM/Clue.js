@@ -300,8 +300,14 @@ MWF.xApplication.CRM.Clue.View = new Class({
                 if (callback)callback(json);
             }.bind(this));
         }
+        if(searchType=="未转化的线索"){
+            this.actions.ListNoTransfer(page, count, filter, function (json) {
+                if (callback)callback(json);
+            }.bind(this));
+        }
         if(searchType=="已转化的线索"){
             this.actions.ListTransfer(page, count, filter, function (json) {
+                debugger
                 if (callback)callback(json);
             }.bind(this));
         }
