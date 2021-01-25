@@ -82,6 +82,7 @@
   "ListNestedSubPerson":{"uri":"/jaxrs/leads/listsub/page/{page}/size/{size}","method":"PUT"},
   "ListMyDuty":{"uri":"/jaxrs/leads/listmyduty/page/{page}/size/{size}","method":"PUT"},
   "ListTransfer":{"uri":"/jaxrs/leads/listmyhastransform/page/{page}/size/{size}","method":"PUT"},
+  "ListNoTransfer":{"uri":"/jaxrs/leads/listmynotransform/page/{page}/size/{size}","method":"PUT"},
   "ListAllMy":{"uri":"/jaxrs/leads/listallmy/page/{page}/size/{size}","method":"PUT"},
   "deleteClue":{"uri":"/jaxrs/leads/{leadsid}","method":"DELETE"},
 
