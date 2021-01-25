@@ -329,4 +329,23 @@ public class LeadsAction extends StandardJaxrsAction {
 		asyncResponse.resume(ResponseFactory.getEntityTagActionResultResponse(request, result));
 	}
 
+	@JaxrsMethodDescribe(value = "获取我负责，和我下属负责未转化的线索", action = ActionListMyNoTransform.class)
+	@PUT
+	@Path("listmynotransform/page/{page}/size/{size}")
+	@Produces(HttpMediaType.APPLICATION_JSON_UTF_8)
+	@Consumes(MediaType.APPLICATION_JSON)
+	public void ListMyNoTransform(@Suspended final AsyncResponse asyncResponse, @Context HttpServletRequest request,
+								  @JaxrsParameterDescribe("页码") @PathParam("page") Integer page, @JaxrsParameterDescribe("每页几条") @PathParam("size") Integer size,
+								  @JaxrsParameterDescribe("匹配关键字") JsonElement jsonElement) {
+		ActionResult<List<ActionListMyNoTransform.Wo>> result = new ActionResult<>();
+		EffectivePerson effectivePerson = this.effectivePerson(request);
+		try {
+			result = new ActionListMyNoTransform().execute(effectivePerson, page, size, jsonElement);
+		} catch (Exception e) {
+			logger.error(e, effectivePerson, request, null);
+			result.error(e);
+		}
+		asyncResponse.resume(ResponseFactory.getEntityTagActionResultResponse(request, result));
+	}
+
 }

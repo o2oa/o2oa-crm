@@ -189,6 +189,49 @@ public class LeadsPermissionService extends PermissionServiceBase {
 		return count;
 	}
 
+	// 获得自己负责的,和我的下属负责线索（未转化）:列表
+	public List<Leads> getList_MyDuty_And_SubNestedDuty_NoTransform(AbstractContext context, Business business,
+																	EffectivePerson effectivePerson, Integer adjustPage, Integer adjustPageSize, String keyString,
+																	String orderFieldName, String orderType) throws Exception {
+		String _me = effectivePerson.getDistinguishedName();
+		List<String> _me_collection = new ArrayList<String>();
+		_me_collection.add(effectivePerson.getDistinguishedName());
+
+		List<String> _persons = new ArrayList<String>();
+		_persons.add(_me);
+		List<String> _subNestedPersons = getListWithPersonSubNested(context, effectivePerson, _me_collection); // 所有下属
+		if (ListTools.isNotEmpty(_subNestedPersons)) {
+			_persons = ListTools.add(_persons, true, true, _subNestedPersons);
+		}
+		// List<Leads> os = business.leadsFactory().ListByOwnerList(_persons);
+		List<Leads> os = business.leadsFactory().ListByOwnerList_NoTransform(_persons, adjustPage, adjustPageSize,
+				keyString, orderFieldName, orderType);
+		//校验查询出的线索list是否为空
+		if(!os.isEmpty()) {
+			//获取跟进记录中的最新跟进记录时间和跟进记录内容，并赋值到线索内容中
+			this.getFollowRecords(os, business);
+		}
+		return os;
+	}
+
+	// 获得自己负责的,和我的下属负责线索(未转化)：数量
+	public long getList_MyDuty_And_SubNestedDuty__NoTransform_Count(AbstractContext context, Business business,
+																	EffectivePerson effectivePerson, String keyString) throws Exception {
+		String _me = effectivePerson.getDistinguishedName();
+		List<String> _me_collection = new ArrayList<String>();
+		_me_collection.add(effectivePerson.getDistinguishedName());
+
+		List<String> _persons = new ArrayList<String>();
+		_persons.add(_me);
+		List<String> _subNestedPersons = getListWithPersonSubNested(context, effectivePerson, _me_collection); // 所有下属
+		if (ListTools.isNotEmpty(_subNestedPersons)) {
+			_persons = ListTools.add(_persons, true, true, _subNestedPersons);
+		}
+		// List<Leads> os = business.leadsFactory().ListByOwnerList(_persons);
+		long count = business.leadsFactory().ListByOwnerList_NoTransform_Count(_persons, keyString);
+		return count;
+	}
+
     /**
      *  根据线索的ID，获取对应的跟进记录中的最新跟进记录时间和跟进记录内容，并把时间和内容写入到线索内容中返回前端
      * @param osList 线索
