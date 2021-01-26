@@ -967,6 +967,7 @@ MWF.xApplication.CRM.Template.ComplexView = new Class({
             });
             jQuery('.el-dropdown-menu__item').click(function(){
                 if(jQuery(this).parent().attr("tid")=="selectSearch"){
+                    jQuery("#notify").remove();
                     jQuery(".se-select-name").text(jQuery(this).text());
                     that.useTablePlugins(1,jQuery(".headSearchInput").val(),jQuery(".se-select-name").text());
                     jQuery(this).parent().toggle(100);
