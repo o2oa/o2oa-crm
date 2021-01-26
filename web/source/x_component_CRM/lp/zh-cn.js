@@ -224,7 +224,7 @@ MWF.xApplication.CRM.LP = {
 			"field1":{
 				"field":"customername",
 				"title":"客户名称",
-				"width":165,
+				"width":200,
 				"fixed":"left",
 				"resize": true,
 				"align": 'left',
@@ -234,41 +234,41 @@ MWF.xApplication.CRM.LP = {
 			"field2":{
 				"field":"owneruser",
 				"title":"负责人",
-				"width":165,
+				"width":200,
 				"align": 'left'
 			},
 			"field3":{
 				"field":"industry",
 				"title":"客户类型",
-				"width":120,
+				"width":200,
 				"align": 'left',
 				"resize":true
 			},
 			"field4":{
 				"field":"level",
 				"title":"客户级别",
-				"width":120,
+				"width":200,
 				"resize":true,
 				"align": 'left'
 			},
 			"field5":{
 				"field":"updateTime",
 				"title":"更新时间",
-				"width":160,
+				"width":200,
 				"align": 'left',
 				"sort":true
 			},
 			"field6":{
 				"field":"dealstatus",
 				"title":"成交状态",
-				"width":120,
+				"width":200,
 				"align": 'left',
 				"sort":true
 			},
 			"field7":{
 				"field":"createTime",
 				"title":"创建时间",
-				"width":160,
+				"width":200,
 				"align": 'left',
 				"sort":true
 			},
@@ -276,33 +276,33 @@ MWF.xApplication.CRM.LP = {
 				"field":"remark",
 				"title":"备注",
 				"align": 'left',
-				"width":165
+				"width":200
 			},
 			"field9":{
 				"field":"nexttime",
 				"title":"下次联系时间",
-				"width":160,
+				"width":200,
 				"align": 'left',
 				"sort":true
 			},
 			"field10":{
 				"field":"cellphone",
 				"title":"手机",
-				"width":165,
+				"width":200,
 				"resize":true,
 				"align": 'left'
 			},
 			"field11":{
 				"field":"createuser",
 				"title":"创建人",
-				"width":120,
+				"width":130,
 				"align": 'left',
 				"sort":true
 			},
 			"field12":{
 				"field":"telephone",
 				"title":"电话",
-				"minWidth":165,
+				"minWidth":200,
 				"resize":true,
 				"align": 'left',
 				"sort":true
@@ -432,7 +432,7 @@ MWF.xApplication.CRM.LP = {
 			"field1":{
 				"field":"customername",
 				"title":"客户名称",
-				"width":165,
+				"width":200,
 				"fixed":"left",
 				"resize": true,
 				"align": 'left',
@@ -442,35 +442,35 @@ MWF.xApplication.CRM.LP = {
 			"field2":{
 				"field":"industry",
 				"title":"客户类型",
-				"width":120,
+				"width":200,
 				"align": 'left',
 				"resize":true
 			},
 			"field3":{
 				"field":"level",
 				"title":"客户级别",
-				"width":120,
+				"width":200,
 				"resize":true,
 				"align": 'left'
 			},
 			"field4":{
 				"field":"updateTime",
 				"title":"更新时间",
-				"width":160,
+				"width":200,
 				"align": 'left',
 				"sort":true
 			},
 			"field5":{
 				"field":"dealstatus",
 				"title":"成交状态",
-				"width":120,
+				"width":200,
 				"align": 'left',
 				"sort":true
 			},
 			"field6":{
 				"field":"createTime",
 				"title":"创建时间",
-				"width":160,
+				"width":200,
 				"align": 'left',
 				"sort":true
 			},
@@ -478,33 +478,33 @@ MWF.xApplication.CRM.LP = {
 				"field":"remark",
 				"title":"备注",
 				"align": 'left',
-				"width":165
+				"width":200
 			},
 			"field8":{
 				"field":"nexttime",
 				"title":"下次联系时间",
-				"width":160,
+				"width":200,
 				"align": 'left',
 				"sort":true
 			},
 			"field9":{
 				"field":"cellphone",
 				"title":"手机",
-				"width":165,
+				"width":200,
 				"resize":true,
 				"align": 'left'
 			},
 			"field10":{
 				"field":"createuser",
 				"title":"创建人",
-				"width":120,
+				"width":200,
 				"align": 'left',
 				"sort":true
 			},
 			"field11":{
 				"field":"telephone",
 				"title":"电话",
-				"minWidth":165,
+				"minWidth":200,
 				"resize":true,
 				"align": 'left',
 				"sort":true
@@ -842,7 +842,7 @@ MWF.xApplication.CRM.LP = {
 			"field1":{
 				"field":"contactsname",
 				"title":"姓名",
-				"width":165,
+				"width":200,
 				"resize": true,
 				"fixed":"left",
 				"align": 'left',
@@ -851,7 +851,7 @@ MWF.xApplication.CRM.LP = {
 			"field2":{
 				"field":"customer",
 				"title":"客户名称",
-				"width":165,
+				"width":200,
 				"resize": true,
 				"align": 'left',
 				"formatter" :function (v, data, index) {return '<a style="color: #337ab7;" class="otherId" id="'+v.id+'">'+v.customername+'</a>';}
@@ -859,34 +859,34 @@ MWF.xApplication.CRM.LP = {
 			"field3":{
 				"field":"cellphone",
 				"title":"手机",
-				"width":120,
+				"width":160,
 				"align": 'left',
 				"resize":true
 			},
 			"field4":{
 				"field":"email",
 				"title":"电子邮箱",
-				"width":120,
+				"width":160,
 				"resize":true,
 				"align": 'left'
 			},
 			"field5":{
 				"field":"post",
 				"title":"职务",
-				"width":160,
+				"width":130,
 				"align": 'left',
 				"sort":true
 			},
 			"field6":{
 				"field":"detailaddress",
 				"title":"地址",
-				"width":120,
+				"width":200,
 				"align": 'left',
 			},
 			"field7":{
 				"field":"createuser",
 				"title":"创建人",
-				"width":120,
+				"width":130,
 				"align": 'left',
 			},
 			"field8":{
@@ -904,40 +904,40 @@ MWF.xApplication.CRM.LP = {
 			"field10":{
 				"field":"owneruser",
 				"title":"负责人",
-				"width":120,
+				"width":130,
 				"resize":true,
 				"align": 'left'
 			},
 			"field11":{
 				"field":"createuser",
 				"title":"创建人",
-				"width":120,
+				"width":130,
 				"align": 'left'
 			},
 			"field12":{
 				"field":"remark",
 				"title":"备注",
-				"minWidth":165,
+				"minWidth":200,
 				"resize":true,
 				"align": 'left'
 			},
 			"field13":{
 				"field":"decision",
 				"title":"是否关键决策人",
-				"width":120,
+				"width":160,
 				"align": 'left',
 				"sort":true
 			},
 			"field14":{
 				"field":"nexttime",
 				"title":"下次联系时间",
-				"width":120,
+				"width":200,
 				"align": 'left'
 			},
 			"field15":{
 				"field":"sex",
 				"title":"性别",
-				"width":120,
+				"width":130,
 				"align": 'left'
 			}
 		},
