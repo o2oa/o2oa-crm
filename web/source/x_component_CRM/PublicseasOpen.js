@@ -192,8 +192,12 @@ MWF.xApplication.CRM.PublicseasOpen = new Class({
             var itemTemplateObject = _self.getItemTemplate(_self.lp );
             var section_conent = '<div class="section-conent">';
             for ( i in itemTemplateObject){
+                var conentValue = jsonObj[i];
+                if(i == "province" && conentValue.indexOf("#")>0){
+                    conentValue = conentValue.replaceAll("#","-")
+                }
                 section_conent = section_conent+'<div class="conent-inline"><div class="conent-title">'+itemTemplateObject[i].text+'</div>' +
-                    '<div class="conent-value">'+((typeof(jsonObj[i])=="undefined")?"" : jsonObj[i])+'</div></div>';
+                    '<div class="conent-value">'+((typeof(jsonObj[i])=="undefined")?"" : conentValue)+'</div></div>';
 
             }
             section_conent = section_conent + '</div>';
@@ -1327,6 +1331,10 @@ MWF.xApplication.CRM.PublicseasOpen = new Class({
                 text:lp.cellphone,
                 type: "text"
             },
+            province: {
+                text:lp.province,
+                type: "map"
+            },
             detailaddress: {
                 text:lp.detailaddress,
                 type: "text"
@@ -1334,10 +1342,6 @@ MWF.xApplication.CRM.PublicseasOpen = new Class({
             remark: {
                 text:lp.remark,
                 type: "textarea"
-            },
-            location: {
-                text:lp.location,
-                type: "map"
             }
 
         }

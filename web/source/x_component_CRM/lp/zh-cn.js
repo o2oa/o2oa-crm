@@ -409,7 +409,7 @@ MWF.xApplication.CRM.LP = {
 			"remark":"备注",
 			"cellphone":"手机",
 			"detailaddress":"详细地址",
-			"location":"区域",
+			"province":"区域",
 			"saveSuccess":"新建成功",
 			"actionConfirm":"确定",
 			"actionCancel":"关闭"
