@@ -182,7 +182,12 @@ MWF.xApplication.CRM.ContactsOpen = new Class({
                 var valueStr = "";
                 if(i=="customername"){
                     valueStr = ((typeof(jsonObj.customer)=="undefined")?"" : jsonObj.customer.customername);
-                }else{
+                }else if(i == "province"){
+                    valueStr = ((typeof(jsonObj[i])=="undefined")?"" : jsonObj[i]);
+                    if(valueStr.indexOf("#")>0){
+                        valueStr = valueStr.replaceAll("#","-");
+                    }
+                } else{
                     valueStr = ((typeof(jsonObj[i])=="undefined")?"" : jsonObj[i]);
                 }
                 section_conent = section_conent+'<div class="conent-inline"><div class="conent-title">'+itemTemplateObject[i].text+'</div>' +
