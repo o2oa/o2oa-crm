@@ -302,7 +302,7 @@ MWF.xApplication.CRM.LP = {
 			"field12":{
 				"field":"telephone",
 				"title":"电话",
-				"minWidth":200,
+				"minWidth":130,
 				"resize":true,
 				"align": 'left',
 				"sort":true
