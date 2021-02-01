@@ -177,12 +177,13 @@ MWF.xApplication.CRM.ClueOpen = new Class({
             var itemTemplateObject = _self.lp;
             var section_conent = '<div class="section-conent">';
             for ( i in itemTemplateObject){
+                debugger
                 var conentValue = jsonObj[i];
                 if(i == "province" && conentValue.indexOf("#")>0){
                     conentValue = conentValue.replaceAll("#","-")
                 }
                 section_conent = section_conent+'<div class="conent-inline"><div class="conent-title">'+itemTemplateObject[i].text+'</div>' +
-                    '<div class="conent-value">'+conentValue+'</div></div>';
+                    '<div class="conent-value">'+((typeof(conentValue)=="undefined")?"" : conentValue)+'</div></div>';
 
             }
             section_conent = section_conent + '</div>';

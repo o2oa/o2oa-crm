@@ -179,6 +179,7 @@ MWF.xApplication.CRM.ContactsOpen = new Class({
             var itemTemplateObject = _self.lp;
             var section_conent = '<div class="section-conent">';
             for ( i in itemTemplateObject){
+                debugger
                 var valueStr = "";
                 if(i=="customername"){
                     valueStr = ((typeof(jsonObj.customer)=="undefined")?"" : jsonObj.customer.customername);

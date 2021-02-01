@@ -193,7 +193,7 @@ MWF.xApplication.CRM.PublicseasOpen = new Class({
             var section_conent = '<div class="section-conent">';
             for ( i in itemTemplateObject){
                 var conentValue = jsonObj[i];
-                if(i == "province" && conentValue.indexOf("#")>0){
+                if(i == "province"  && conentValue && conentValue.indexOf("#")>0){
                     conentValue = conentValue.replaceAll("#","-")
                 }
                 section_conent = section_conent+'<div class="conent-inline"><div class="conent-title">'+itemTemplateObject[i].text+'</div>' +
