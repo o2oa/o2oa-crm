@@ -361,4 +361,4 @@ gulp.task("git_dest", function () {
 });
 gulp.task("git", gulp.series('git_clean', 'git_dest'));
 
-gulp.task("default", gulp.series(gulp.parallel(appTasks, 'index'), "o2:new-v"));
+gulp.task("default", gulp.parallel(appTasks));
